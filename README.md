@@ -1,4 +1,9 @@
 ## Getting started
-
+#setup
 bundle install
-bundle exec rake spec
+
+#run tests
+bundle exec rake spec --format documentation
+
+#run tests with an output file
+bundle exec rake spec --format documentation --out rspec.txt
