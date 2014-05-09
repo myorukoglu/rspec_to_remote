@@ -11,7 +11,7 @@ feature "Signing in to test" do
     visit '/'
     click_link 'log in'
     fill_in 'j_username', :with => 'phua'
-    fill_in 'j_password', :with => 'bbb123'
+    fill_in 'j_password', :with => 'abc123'
     click_button 'log in'
     expect(page).to have_content("Invalid login information. Please try again. ")
   end
