@@ -100,10 +100,38 @@ feature "Jenkins job" do
     expect(page).to have_content("phuong hua")
   end
 
+  it 'qa7' do
+    visit '/'
+    click_link 'log in'
+    fill_in 'j_username', :with => 'phua'
+    fill_in 'j_password', :with => 'bbb123'
+    click_button 'log in'
+    click_link 'qa7'
+    click_link 'Build Now'
+    expect(page).to have_content("phuong hua")
+  end
 
+  it 'qa7-admin-code-creation-web-ui-test' do
+    visit '/'
+    click_link 'log in'
+    fill_in 'j_username', :with => 'phua'
+    fill_in 'j_password', :with => 'bbb123'
+    click_button 'log in'
+    click_link 'qa7-admin-code-creation-web-ui-test'
+    click_link 'Build Now'
+    expect(page).to have_content("phuong hua")
+  end
 
-
-
+  it 'qa7-ruby-service-tests' do
+    visit '/'
+    click_link 'log in'
+    fill_in 'j_username', :with => 'phua'
+    fill_in 'j_password', :with => 'bbb123'
+    click_button 'log in'
+    click_link 'qa7-ruby-service-tests'
+    click_link 'Build Now'
+    expect(page).to have_content("phuong hua")
+  end
 
 
 
