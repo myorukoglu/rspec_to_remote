@@ -1,4 +1,4 @@
-require './spec/spec_helper'
+require './spec/spec_helper1'
 feature "Jenkins job" do
 
   it 'qa5-admin-code-creation-web-ui-test' do

@@ -2,25 +2,6 @@ require './spec/spec_helper'
 
 feature "Signing in to Directly" do
 
-    it 'land on home page' do
-      visit '/'
-      click_link 'Log In'
-      click_link 'directly'
-      expect(page).to have_content('EXPERT CROWDSERVICE')
-    end
-
-    it 'should land on log in page' do
-      visit '/'
-      click_link 'Log In'
-      expect(page).to have_content('Log in to your Directly account')
-    end
-
-    it 'should land on sign up page' do
-      visit '/'
-      click_link 'Sign Up'
-      expect(page).to have_content('Sign up for Directly')
-    end
-
     it 'should land on facebook pop up' do
       visit '/'
       click_link 'Connect'
