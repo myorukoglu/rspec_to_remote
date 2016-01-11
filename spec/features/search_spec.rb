@@ -1,20 +1,39 @@
 require './spec/spec_helper'
-feature "Signing in to Shopwell" do
+require './spec/features/search_actions.rb'
 
-  it 'should let me in with a valid account' do
-    visit '/'
-    click_link 'Sign In'
-    fill_in 'j_username', :with => 'bigmac@gmail.com'
-    fill_in 'j_password', :with => 'password123'
-    click_button 'Sign In'
-    expect(page).to have_content("Find foods you'll love.")
+feature "Signing in to" do
+
+  before(:each) do
+    visit ''
+    Capybara.current_session.driver.browser.manage.window.maximize
   end
 
-  it 'should not let me in with an invalid account' do
-    visit '/'
-    click_link 'Sign In'
-    click_button 'Sign In'
-    expect(page).to have_content("We're unable to sign you in. Please try again.")
+  ###get_config.rb --
+  ###config.yml, remove second stage
+  ###admin.spec.rb, remove zyx
+  # fill_in 'login_username', :with => 'johhnyboy_'
+  # fill_in 'login_password', :with => 'neddy6'
+
+  xit 'jenkins qa' do
+    fill_in 'user-signin', :with => 'ph'
+    fill_in 'pass-signin', :with => ''
+    click_button 'signin-button'
+    sleep 10
+    visit 'http://jenkins.btstaging.com/view/QA/'
+    sleep 10
+    find('.icon-clock')[0].click
+    sleep 1
+    find('.icon-clock')[1].click
+    sleep 5
+    expect(page).to have_content('Idle')
+  end
+
+  it 'zyx' do
+    sign_in_method('prisoft123', 'pri123$')
+    quick_match
+    loop(200)
+    #card_action_like_50
+    expect(page).to have_content('Quickmatch')
   end
 
 end
