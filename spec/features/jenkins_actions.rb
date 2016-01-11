@@ -1,4 +1,4 @@
-#
+##
 def user(user)
   fill_in 'j_username', :with => user
 end
