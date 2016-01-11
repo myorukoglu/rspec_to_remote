@@ -20,7 +20,7 @@ require 'selenium-webdriver'
 Capybara.default_driver = :selenium
 Capybara.app_host = 'http://jenkins.btstaging.com/'
 Capybara.run_server = false
-
+#
 # def get_specific_environment(environment)
 #   if (File.exist?('./spec/config/secret.yml'))
 #     puts '[INFO] Loading local credentials'
